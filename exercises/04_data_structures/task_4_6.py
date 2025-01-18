@@ -25,7 +25,6 @@ AD_MetricV = ospf_route.split()[1][1:7]
 Next_HopV = ospf_route.split()[3][0:9]
 Last_updateV = ospf_route.split()[4][0:5]
 Outbound_InterfaceV = ospf_route.split()[5]
-print(PrefixV, AD_MetricV, Next_HopV,Last_updateV, Outbound_InterfaceV)
 
 template = """
 Prefix                {}
@@ -35,3 +34,4 @@ Last update           {}
 Outbound Interface    {}
 """
  
+print(template.format(PrefixV,AD_MetricV,Next_HopV,Last_updateV,Outbound_InterfaceV))
