@@ -25,6 +25,5 @@ command2 = "switchport trunk allowed vlan 1,3,8,9"
 command1_1 = set(command1.split()[-1].split(','))
 command2_2 = set(command2.split()[-1].split(','))
 result = list(command1_1.intersection(command2_2))
-print(command1_1, command2_2)
 print(result)
 
