@@ -22,8 +22,8 @@ ospf_route. Значения из строки ospf_route надо получи�
 ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
 PrefixV = ospf_route.split()[0][0:12]
 AD_MetricV = ospf_route.split()[1][1:7]
-Next_HopV = ospf_route.split()[3][0:10]
-Last_updateV = ospf_route.split()[4][0:6]
+Next_HopV = ospf_route.split()[3][0:9]
+Last_updateV = ospf_route.split()[4][0:5]
 Outbound_InterfaceV = ospf_route.split()[5]
 print(PrefixV, AD_MetricV, Next_HopV,Last_updateV, Outbound_InterfaceV)
 
