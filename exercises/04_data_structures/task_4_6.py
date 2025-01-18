@@ -35,4 +35,3 @@ Last update           {}
 Outbound Interface    {}
 """
  
-print(template.format(PrefixV,AD_MetricV,Next_HopV,Last_updateV,Outbound_InterfaceV))
