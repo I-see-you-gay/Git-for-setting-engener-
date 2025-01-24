@@ -30,19 +30,19 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
-ip_address = input('Введите IP: ')
-ip_address = ip_address.split('.')
-prefix_mask = ip_address[-1][-2:]
-mask = int(prefix_mask) * "1" + "0" * (32 - int(prefix_mask))
-mask = '''{0:08b}{1:08b}{2:08b}{3:08b}'''.format(int(mask[:8],2), int(mask[8:16],2), int(mask[16:24],2), int(mask[24:],2))
-ip_address_host = '.'.join(ip_address)[:-3].split('.')
-ip_address_bin = '''{0:08b}{1:08b}{2:08b}{3:08b}'''.format(int(ip_address_host[0]),int(ip_address_host[1]), int(ip_address_host[2]), int(ip_address_host[3]))
-ip_address_network = ip_address_bin[:mask.count('1')]+'0'*(32-mask.count('1')) 
+ip_host = input("Ведите IP хоста: ")
+mask_prefix = ip_host.split('/')[1]
+mask_bin = '1' * int(mask_prefix) + '0' * (32 - int(mask_prefix))
+mask_user_output = '''Mask:
+{0:<8}  {1:<8}  {2:<8}  {3:<8}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(mask_bin[0:8],2), int(mask_bin[8:16],2), int(mask_bin[16:24],2), int(mask_bin[24:32],2))
+ip_host = ip_host[:-3].split('.')
+ip_host = '.'.join(ip_host) 
+ip_host_bin = list(ip_host.split('.'))
 print('Network:')
-print('''{0:<8}  {1:<8}  {2:<8}  {3:<8}
-{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(ip_address_network[0:8],2), int(ip_address_network[8:16],2), int(ip_address_network[16:24],2), int(ip_address_network[24:],2)))
-m10 = '''{0:<8}  {1:<8}  {2:<8}  {3:<8}'''.format(int(mask[0:8],2), int(mask[8:16],2), int(mask[16:24],2), int(mask[24:],2))
-mask2 = '''{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(mask[:8],2), int(mask[8:16],2), int(mask[16:24],2), int(mask[24:],2))
-print('Mask:','\n'+'/'+ prefix_mask+'\n'+m10+'\n'+mask2)
-
-
+user_output = '''{0:<8}  {1:<8}  {2:<8}  {3:<8}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(ip_host_bin[0]), int(ip_host_bin[1]), int(ip_host_bin[2]), int(ip_host_bin[3]))
+print(user_output)
+print('/'+mask_prefix)
+print(mask_user_output)
+#ip_host_bin = bin(int(ip_host))
