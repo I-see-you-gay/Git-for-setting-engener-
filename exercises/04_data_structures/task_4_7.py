@@ -17,5 +17,5 @@
 
 mac = "AAAA:BBBB:CCCC"
 macl = mac.split(':')
-print([3:]bin(int(macl[0]+macl[1]+macl[2],16)))
-
+macl = bin(int(macl[0]+macl[1]+macl[2],16))
+print(macl[2:])
