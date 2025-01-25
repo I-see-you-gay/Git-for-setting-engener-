@@ -16,4 +16,6 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
-print(bin(mac,16).remove(':'))
+macl = mac.split(':')
+print(bin(int(macl[0]+macl[1]+macl[2],16)))
+
