@@ -33,7 +33,6 @@ vlan_info = {
 }
 interface_mode = input("Введите режим работы интерфейса (access/trunk): ")
 interface_type = input('Введите тип и номер интерфейса: ')
-vlan_list = input(vlan_info[interface_mode]).split(',')
-print('\n'+ '-'*30)
+vlan_list = input(vlan_info[interface_mode])
 print('interface {}'.format(interface_type))
 print('\n'.join(access_template[interface_mode]).format(vlan_list))

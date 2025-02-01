@@ -34,8 +34,9 @@ ip_host = input("Ведите IP хоста: ")
 mask_prefix = ip_host.split('/')[1]
 mask_bin = '1' * int(mask_prefix) + '0' * (32 - int(mask_prefix))
 mask_user_output = '''Mask:
+{4:}
 {0:<8}  {1:<8}  {2:<8}  {3:<8}
-{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(mask_bin[0:8],2), int(mask_bin[8:16],2), int(mask_bin[16:24],2), int(mask_bin[24:32],2))
+{0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(mask_bin[0:8],2), int(mask_bin[8:16],2), int(mask_bin[16:24],2), int(mask_bin[24:32],2),'/'+mask_prefix)
 ip_host = ip_host[:-3].split('.')
 ip_host = '.'.join(ip_host) 
 ip_host_bin = list(ip_host.split('.'))
@@ -43,6 +44,5 @@ print('Network:')
 user_output = '''{0:<8}  {1:<8}  {2:<8}  {3:<8}
 {0:08b}  {1:08b}  {2:08b}  {3:08b}'''.format(int(ip_host_bin[0]), int(ip_host_bin[1]), int(ip_host_bin[2]), int(ip_host_bin[3]))
 print(user_output)
-print('/'+mask_prefix)
 print(mask_user_output)
 #ip_host_bin = bin(int(ip_host))
