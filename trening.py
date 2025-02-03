@@ -74,7 +74,7 @@ for rasp in day:
 
 
 
-inputs = input('Введите ip: ')
+"""inputs = input('Введите ip: ')
 ip_address = inputs.split('.')
 ip_list = []
 x = -1  
@@ -102,6 +102,15 @@ else:
         else:
             print('unused')
     else:
-        print('Неправильный IP адресс')        
-        
+        print('Неправильный IP адресс')"""        
 
+
+x = input('введите что то :  ').split('.')
+print(x)
+print(type(x[0]))
+print(type(x[1]))
+y = []
+y.append(int(x[0]))
+y.append(int(x[1]))
+print(type(y[0]))
+print(type(y[1]))
