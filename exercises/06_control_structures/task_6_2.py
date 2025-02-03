@@ -12,3 +12,14 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip_address = input('Введите IP-адресс в формате 10.10.10.1 :').split('.')
+if ip_address[0] > '0' and ip_address[0]<= '223':
+   print('unicast')
+elif ip_address[0] > '223' and ip_address[0] <= '239':
+   print('multicast')
+elif  ip_address[0] == '255' and ip_address[1] == '255' and ip_address[2] == '255' and ip_address[3] == '255':
+   print('local broadcast')
+elif ip_address[0] == '0' and ip_address[1] == '0'and ip_address[2] == '0' and ip_address[3] == '0':
+   print('unassigned')
+else:
+   print('unused')
